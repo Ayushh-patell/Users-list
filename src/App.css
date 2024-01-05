@@ -1,38 +1,77 @@
-.App {
+body {
+  background-color: transparent !important;
+}
+
+.userList {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: scroll;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.MuiAccordionSummary-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.img {
+  height: 85px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #e6e6e6;
+  overflow: hidden;
+}
+.img img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #b3b3b3;
+  text-align: center;
+}
+.job, .username, .name, .email, .created {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #777777;
+}
+ .username span, .name span, .email span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000000;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+@media screen and (max-width:860px) {
+  .userList {
+    display: none;
+  }
+}
+@media screen and (min-width:860px) {
+  .userListSm {
+    display: none;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html {
+  --s: 300px; /* control the size */
+  --c1: #e0e0e0;
+  --c2: #eef1f8;
+  --c3: #ebebeb;
+  
+  background:
+    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+     calc(.5*var(--s)) calc(.5*var(--s)*0.577),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+  background-size: var(--s) calc(var(--s)*0.577);
 }
